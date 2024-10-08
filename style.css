@@ -1,11 +1,9 @@
-
 body {
     font-family: Arial, sans-serif;
     margin-top: 100px;
     display: flex;
-    text-align: center; 
+    text-align: center;
 }
-
 .todo-container{
     width: 400px;
     margin:auto;
@@ -13,14 +11,28 @@ body {
     padding: 20px;
     border-radius: 5px;
 }
-
 h1 {
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
+}
+button{
+    border-color: blueviolet;
+    box-shadow: 3px 3px red;
+    padding:4px 10px;
+    margin-left: 10px;
+}
+ul li{
+    list-style-type: none;
+    justify-content: space-between;
+}
+ul li{
+    margin-bottom: 10px;
 }
 
-ul{
-    list-style-type: none;
-    margin-left: 0;
-    padding-left: 0;
-}
-li
+
+
+
+
+
+
+
+

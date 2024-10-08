@@ -4,15 +4,15 @@ const taskList = document.getElementById("listItems");
 
 //adds a new task with a checkbox, the task, and a remove button
 function addTask(){
-    var taskcheck = inputText.value
+    let taskcheck = inputText.value
         if (taskcheck !== ""){
 
             //create the list element if the input field has a todo item
-            var li = document.createElement("li")
+            let li = document.createElement("li")
 
             /// create delete button and checkbox for list element
-            const deleteBtn = document.createElement("button")
-            const checkBox =document.createElement("input");
+            let deleteBtn = document.createElement("button")
+            let checkBox =document.createElement("input");
             checkBox.type = 'checkbox';
             li.innerHTML = taskcheck;
             deleteBtn.innerHTML = 'remove';
@@ -48,7 +48,7 @@ if(this.checked){
     task.style.textDecoration = 'none';
 }
 
- //old code to do the strikethrough without the checkbox will need to add css for .strike   
+ //old code to do the strikethrough without the checkbox will need to add css for .strike (classList)   
     // let task = event.target.parentElement;
     // task.classList.toggle('strike');
 }
