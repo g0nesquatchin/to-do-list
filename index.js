@@ -6,6 +6,8 @@ const taskList = document.getElementById("listItems");
 function addTask(){
     var taskcheck = inputText.value
         if (taskcheck !== ""){
+
+            //create the list element if the input field has a todo item
             var li = document.createElement("li")
 
             /// create delete button and checkbox for list element
@@ -46,7 +48,7 @@ if(this.checked){
     task.style.textDecoration = 'none';
 }
 
- //old code to do the strikethrough without the checkbox   
-    // let task = event.target;
+ //old code to do the strikethrough without the checkbox will need to add css for .strike   
+    // let task = event.target.parentElement;
     // task.classList.toggle('strike');
 }
