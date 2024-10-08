@@ -1,3 +1,22 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin-top: 100px;
+    display: flex;
+    text-align: center; 
+}
+
+.todo-container{
+    width: 400px;
+    margin:auto;
+    border: 5px solid black;
+    padding: 20px;
+    border-radius: 5px;
+}
+
 h1 {
-    color: purple;
+    margin-bottom: 20px; 
+}
+button{
+    padding:10px 20px;
 }

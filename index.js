@@ -1,23 +1,52 @@
-var inputText = document.getElementById("todoInput");
-var taskList = document.getElementById("listItems");
+const inputText = document.getElementById("todoInput");
+const taskList = document.getElementById("listItems");
 
+
+//adds a new task with a checkbox, the task, and a remove button
 function addTask(){
     var taskcheck = inputText.value
         if (taskcheck !== ""){
             var li = document.createElement("li")
-            li.innerHTML = taskcheck;
-            taskList.appendChild(li);
-                inputText.value = "";
-        }
-console.log (taskcheck);
-}
-function deleteTask (){
-    for (const li of taskList){
-        li.addEventListener('click', function(){
-            this.parentNode.removeChild(this);
 
-        })
-    }
+            /// create delete button and checkbox for list element
+            const deleteBtn = document.createElement("button")
+            const checkBox =document.createElement("input");
+            checkBox.type = 'checkbox';
+            li.innerHTML = taskcheck;
+            deleteBtn.innerHTML = 'remove';
+            
+            //add new list element to our list and append the checkbox and delete buttons
+            taskList.appendChild(li);
+            li.prepend(checkBox)
+            li.appendChild(deleteBtn);
+
+            //add event listeners at the delete button and checkbox
+            deleteBtn.addEventListener("click", deleteTask);
+            checkBox.addEventListener('click', completeTask)
+
+            //reset the to-do input bar
+            inputText.value = "";
+        }
+
 }
-// var submit = document.getElementById("submit");
-// submit.addEventListener("click", addTask());
+
+//deletes to-do items via the remove button
+function deleteTask (event){
+    let task = event.target.parentElement; //gets the specific li element associated with the event
+    taskList.removeChild(task);
+}
+
+//if the checkbox is checked, a strike through is added to the text of the list element
+function completeTask(event){
+
+let task = event.target.parentElement //gets the specific li element associated with the event
+if(this.checked){
+    task.style.textDecoration = 'line-through';
+} else{
+    task.style.textDecoration = 'none';
+}
+
+ //old code to do the strikethrough without the checkbox   
+    // let task = event.target;
+    // task.classList.toggle('strike');
+}
